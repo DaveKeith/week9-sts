@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<title>People Page</title>
+</head>
+<body>
+	<nav>
+		<span><a href="/about">About us</a></span>
+	</nav>
+	<div class="container mt-5">
+		<h1>People Page</h1>
+		<h3>Here are some people</h3>
+		
+		<div class="people mt-5" th:object="${people}">
+			<li class="person mt-3" th:each="person:${people}">
+			    <span th:text="${person.first} "></span>
+			    <span th:text="${person.last}"></span>
+		    </li>
+		</div>
+		
+		<a class= "btn btn-primary mt-5" th:href="@{/person/new}">Add Person</a>
+		
+	</div>
+	<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/webjars/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
